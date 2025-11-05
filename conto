@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Conto de Fadas</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ffe6f2, #ffb3d9);
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .book {
+            width: 80%;
+            max-width: 800px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .book::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to right, #ff99cc, #ff66b2);
+            border-radius: 10px 10px 0 0;
+        }
+        .page {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+        .page.active {
+            display: block;
+        }
+        .page h1 {
+            font-size: 2.5em;
+            color: #ff66b2;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .page p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .declaration {
+            font-style: italic;
+            font-size: 1.1em;
+            color: #ff66b2;
+            border-left: 5px solid #ffb3d9;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        .music-link {
+            display: inline-block;
+            background: #ff99cc;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        .music-link:hover {
+            background: #ff66b2;
+        }
+        .image {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .hearts {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2em;
+            color: #ff66b2;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background: #ff99cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff66b2;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="hearts">💖💕💖</div>
+        
+        <!-- Página 1 -->
+        <div class="page active" id="page1">
+            <h1>Era Uma Vez...</h1>
+            <img src="https://via.placeholder.com/300x200/ff99cc/ffffff?text=Castelo+Romântico" alt="Castelo Romântico" class="image">
+            <p>Em um reino encantado, vivia uma jovem princesa chamada K'line. Ela sonhava com um amor verdadeiro, como nos contos de fadas. Um dia, enquanto passeava pelo bosque mágico, encontrou um príncipe encantador chamado Miguel. Seus olhos se encontraram, e o mundo pareceu parar...</p>
+        </div>
+        
+        <!-- Página 2 -->
+        <div class="page" id="page2">
+            <h1>O Primeiro Encontro</h1>
+            <img src="https://via.placeholder.com/300x200/ffb3d9/ffffff?text=Flores+e+Corações" alt="Flores e Corações" class="image">
+            <p>O príncipe Miguel era corajoso e gentil. Ele convidou a princesa K'line para uma dança sob as estrelas. Com flores desabrochando ao redor deles e corações flutuando no ar, eles compartilharam risadas e segredos. Foi o início de uma aventura mágica!</p>
+        </div>
+        
+        <!-- Página 3 -->
+        <div class="page" id="page3">
+            <h1>Desafios e Magia</h1>
+            <img src="https://via.placeholder.com/300x200/ff66b2/ffffff?text=Distância+Romântica" alt="Distância Romântica" class="image">
+            <p>Mas nem tudo foi fácil! A distância tentou separá-los, como uma névoa encantada que os mantinha longe. Juntos, enfrentaram a saudade e os quilômetros, fortalecendo seu amor. Com mensagens mágicas e videochamadas encantadas, eles descobriram que o amor verdadeiro transcende barreiras. Ainda aguardam o beijo que selará sua união eterna.</p>
+        </div>
+        
+        <!-- Página 4 -->
+        <div class="page" id="page4">
+            <h1>E Eles Ainda Esperam...</h1>
+            <img src="https://via.placeholder.com/300x200/ffccff/ffffff?text=Casal+Esperando" alt="Casal Esperando" class="image">
+            <p>Hoje, a princesa K'line e o príncipe Miguel continuam sua jornada, criando memórias mágicas através da distância. Seu amor é como um conto de fadas que cresce a cada dia, esperando o reencontro. E assim, a princesa declara seu amor eterno:</p>
+            <div class="declaration">
+                "Meu Amor, a cada nascer do sol, a distância se torna apenas um detalhe na história imensa e linda que estamos escrevendo juntos. A saudade que sinto é a prova mais linda e constante de que o meu coração escolheu o seu como morada, não importa onde você esteja. Longe dos seus braços, aprendi que o amor verdadeiro não se mede em quilômetros, mas sim na força da nossa conexão e cumplicidade. É incrível como a nossa relação prova todos os dias que a presença de alma é muito mais poderosa do que a presença física. Em cada videochamada, o seu sorriso ilumina o meu dia, e em cada mensagem, sinto o calor do seu abraço mais forte do que qualquer barreira que possa existir entre nós. Você me ensinou a amar com paciência, a valorizar cada segundo e a esperar com a certeza de que a recompensa será eterna. Seu carinho, sua lealdade e a forma como você cuida de mim transformam a espera em algo cheio de propósito. Você é o meu porto seguro, mesmo estando a milhas de distância. Sei que, no meio de um dia corrido, o seu pensamento me alcança, e isso me dá toda a força que eu preciso para seguir em frente. Conto os dias, as horas e os minutos para aquele reencontro mágico, o momento em que a saudade explode em alegria e o abraço nos diz mais do que todas as palavras do mundo. Você é o meu futuro, meu parceiro e a razão pela qual acredito que todos os sonhos valem a pena ser sonhados. Mal posso esperar pelo dia em que a distância será apenas uma lembrança distante e poderemos finalmente planejar o nosso para sempre, lado a lado, todos os dias. Te amo mais do que tudo, meu amor a quilômetros. Com todo meu coração e a maior saudade do mundo"
+            </div>
+            <p>...E assim, o conto continua, cheio de esperança e amor. 💕</p>
+        </div>
+        
+        <!-- Página 5 -->
+        <div class="page" id="page5">
+            <h1>Nossa Música Mágica</h1>
+            <img src="https://via.placeholder.com/300x200/ff99cc/ffffff?text=Notas+Musicais" alt="Notas Musicais" class="image">
+            <p>Para tornar o conto ainda mais encantador, a princesa K'line e o príncipe Miguel têm uma melodia especial que os une. É como uma canção de fadas que toca em seus corações, mesmo à distância. Clique abaixo para ouvir a música que representa o amor deles:</p>
+            <a href="https://open.spotify.com/intl-pt/track/1HCdems7PQZRj42QDWLA0A?si=41b412ffe15241c3" target="_blank" class="music-link">Ouça Nossa Música Mágica 🎶</a>
+            <p>Que essa música os lembre de que o amor deles é eterno e cheio de magia!</p>
+        </div>
+        
+        <div class="navigation">
+            <button onclick="prevPage()">Página Anterior</button>
+            <button onclick="nextPage()">Próxima Página</button>
+        </div>
+        
+        <div class="footer">
+            Criado com muito amor 💕
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 5;
+
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page' + page).classList.add('active');
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+    </script>
+</body>
+</html>
